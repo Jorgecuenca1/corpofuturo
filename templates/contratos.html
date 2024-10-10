@@ -1,0 +1,66 @@
+<!-- templates/contratos.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Contratos{% endblock %}
+
+{% block content %}
+<h2>Lista de Contratos</h2>
+<div class="container">
+    <div class="table-responsive" style="overflow-x: scroll; white-space: nowrap;">
+        <table class="table table-bordered table-striped" style="min-width: 1500px;">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Ver más</th>
+                    <th>Contrato No.</th>
+                    <th>Tipo de Contrato</th>
+                    <th>Año</th>
+                    <th>Nombre</th>
+                    <th>Entidad</th>
+                    <th>RUP</th>
+                    <th>Contrato</th>
+                    <th>SMMLV</th>
+                    <th>SECOP</th>
+                    <th>Contrato 2</th>
+                    <th>Acta Final</th>
+                    <th>Objeto</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Final</th>
+                    <th>Valor</th>
+                    <th>SMMLV 3</th>
+                    <th>Adición</th>
+                    <th>Part. %</th>
+                    <th>Valor Total</th>
+                    <th>SMMLV 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contrato in contratos %}
+                <tr>
+                    <td><a href="{% url 'detalle_contrato' contrato.id %}">Ver más</a></td>
+                    <td>{{ contrato.contrato_no }}</td>
+                    <td>{{ contrato.tipo_de_contrato }}</td>
+                    <td>{{ contrato.ANO }}</td>
+                    <td>{{ contrato.nombre }}</td>
+                    <td>{{ contrato.entidad }}</td>
+                    <td>{{ contrato.rup }}</td>
+                    <td>{{ contrato.contrato }}</td>
+                    <td>{{ contrato.smmlv }}</td>
+                    <td>{{ contrato.secop }}</td>
+                    <td>{{ contrato.contrato2 }}</td>
+                    <td>{{ contrato.acta_final }}</td>
+                    <td>{{ contrato.objeto }}</td>
+                    <td>{{ contrato.fecha_inicio }}</td>
+                    <td>{{ contrato.fecha_final }}</td>
+                    <td>{{ contrato.valor }}</td>
+                    <td>{{ contrato.smmlv3 }}</td>
+                    <td>{{ contrato.adicion }}</td>
+                    <td>{{ contrato.part_porc }}</td>
+                    <td>{{ contrato.valor_total }}</td>
+                    <td>{{ contrato.smmlv4 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
